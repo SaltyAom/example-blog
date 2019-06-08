@@ -50,7 +50,7 @@ const Blog = () => {
                 }
                 #blog-time {
                     font-size:18px;
-                    color:#aaa;
+                    color:#6c6c6c;
                     margin-top: 15px;
                     display:block;
                 }
@@ -62,7 +62,7 @@ const Blog = () => {
                 }
                 h2 { 
                     font-size: 42px;
-                    color:#121212;
+                    color:#6c6c6c;
                     margin: 45px 0 20px 0;
                 }
                 p { 
@@ -73,7 +73,7 @@ const Blog = () => {
                 }
                 li {
                     font-size: 21px;
-                    color: #888;
+                    color: #6c6c6c;
                     line-height: 2rem;
                 }
                 #blog-summary {
@@ -207,13 +207,13 @@ const Blog = () => {
                     </header>
                     <picture>
                         <source
-                            type="image/jpg"
-                            srcSet='../static/img/anime-girlsX1280.jpg 1280w, ../static/img/anime-girlsX726.jpg 726w'
+                            type="image/webp"
+                            srcSet='../static/img/anime-girlsX1280.webp 1280w, ../static/img/anime-girlsX726.webp 726w'
                             size="(min-width:726.1px) 1280px, (max-width:726px) 726px"
                         />
                         <source
-                            type="image/webp"
-                            srcSet='../static/img/anime-girlsX1280.webp 1280w, ../static/img/anime-girlsX726.webp 726w'
+                            type="image/jpg"
+                            srcSet='../static/img/anime-girlsX1280.jpg 1280w, ../static/img/anime-girlsX726.jpg 726w'
                             size="(min-width:726.1px) 1280px, (max-width:726px) 726px"
                         />
                         <img
@@ -271,12 +271,12 @@ const Blog = () => {
                             <div id="blog-writer">
                                 <picture>
                                     <source
-                                        type="image/jpg"
-                                        srcSet='../static/img/aomkirby123.jpg'
-                                    />
-                                    <source
                                         type="image/webp"
                                         srcSet='../static/img/aomkirby123.webp'
+                                    />
+                                    <source
+                                        type="image/jpg"
+                                        srcSet='../static/img/aomkirby123.jpg'
                                     />
                                     <img
                                         id='blog-writer-img'

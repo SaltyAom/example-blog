@@ -33,18 +33,18 @@ const Card = (props) => (
                 width:100%;
                 margin:0;
                 font-size: 21px;
-                color: #333;
+                color: #6f6f6f;
             }
             .blog-nav-card-body-read-time {
                 display:block;
                 margin:8px 0 10px 0;
-                color:#ababab;
+                color: #6f6f6f;
                 font-size:16px;
             }
             .blog-nav-card-body-author {
                 display:block;
                 margin:10px 0 0 10px;
-                color:#ababab;
+                color: #6f6f6f;
                 font-size:16px;
             }
             .blog-nav-card-body-author::before {
@@ -54,12 +54,12 @@ const Card = (props) => (
         <a className="blog-nav-card" href={props.href} rel="nofollow">
             <picture>
                 <source
-                    type="image/jpg"
-                    srcSet={`../static/img/${props.imgDir}.jpg`}
-                />
-                <source
                     type="image/webp"
                     srcSet={`../static/img/${props.imgDir}.webp`}
+                />
+                <source
+                    type="image/jpg"
+                    srcSet={`../static/img/${props.imgDir}.jpg`}
                 />
                 <img
                     className="blog-nav-img"
