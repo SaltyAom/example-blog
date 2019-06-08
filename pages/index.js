@@ -126,7 +126,7 @@ const Blog = () => {
                 ::selection, ::-webkit-selection {
                     background-color: rgba(0,123,255,.25);
                 }
-                a { color: #007aff; text-decoration:none; }
+                a { color: #005cff; text-decoration:none; }
                 @media screen and (min-width:768px) and (max-width: 1024px){
                     #blog-nav {
                         width: 740px;
