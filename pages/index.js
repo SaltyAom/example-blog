@@ -62,7 +62,7 @@ const Blog = () => {
                 }
                 h2 { 
                     font-size: 42px;
-                    color:#6c6c6c;
+                    color:#121212;
                     margin: 45px 0 20px 0;
                 }
                 p { 
@@ -158,15 +158,15 @@ const Blog = () => {
             <Head>
                 <title>Introducting Maidreamin API - Example Blog</title>
                 <meta name="title" content="Introducting Maidreamin API - Example Blog" />
-                <meta name="description" content="Introducing Maidreamin API, a RESTful API for geting data from Maidreamin MBK Bangkok" />
+                <meta name="description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok" />
                 <meta name="author" content="aomkirby123" />
-                <meta name="keywords" content="maidreamin api, blog, mbk maidreamin, maidreamin" />
+                <meta name="keywords" content="maidreamin api, restful api, mbk bangkok, api provided" />
                 <meta name="revisit-after" content="7 days" />
                 <link rel="icon" href="../static/img/hakutaku.png" />
                 <meta httpEquiv="content-language" content="en" />
 
                 <meta property="og:title" content="Introducting Maidreamin API - Example Blog" />
-                <meta property="og:description" content="Introducing Maidreamin API, a RESTful API for geting data from Maidreamin MBK Bangkok" />
+                <meta property="og:description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok" />
                 <meta property="og:site_name" content="Introducing Maidreamin API" />
 
                 <meta property="og:locale" content="en_US" />
@@ -183,7 +183,7 @@ const Blog = () => {
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Introducting Maidreamin API - Example Blog" />
-                <meta name="twitter:description" content="Introducing Maidreamin API, a RESTful API for geting data from Maidreamin MBK Bangkok" />
+                <meta name="twitter:description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok" />
                 <meta name="twitter:site" content="@saltyAom" />
                 <meta name="twitter:creator" content="@saltyAom" />
                 <meta name="twitter:image" content="https://ex-maid-blog.now.sh/static/img/anime-girls.jpg" />
@@ -228,7 +228,7 @@ const Blog = () => {
                     <section>
                             <h2>Maidreamin API</h2>
                             <p>
-                                <a href="https://maidreamin.now.sh" taget="_blank" rel="nofollow">Maidreamin API</a> is a RESTful API for geting 
+                                <a href="https://maidreamin.now.sh/menu" taget="_blank" rel="nofollow">Maidreamin API</a> is a RESTful API for getting 
                                 unofficial data of Maidreamin MBK Bangkok including every menu on a list.
                             </p>
                             <p>
@@ -241,7 +241,7 @@ const Blog = () => {
                                 you're ready to use Maidreamin API!
                             </p>
                             <p>
-                                <a href="https://maidreamin.now.sh" taget="_blank" rel="nofollow">Here is 'Maidreamin API'</a>
+                                <a href="https://maidreamin.now.sh/menu" taget="_blank" rel="nofollow">Here is 'Maidreamin API'</a>
                             </p>
                             <h2>Multiple language support</h2>
                             <p>
@@ -261,7 +261,7 @@ const Blog = () => {
                         <summary id="blog-summary">
                             <h2>Wrapping it up</h2>
                             <h3 id="blog-summary-text">
-                            <a href="https://maidreamin.now.sh" taget="_blank" rel="nofollow">Maidreamin API</a> provided Maidreamin menu from unofficial creator with easily to set up 
+                            <a href="https://maidreamin.now.sh/menu" taget="_blank" rel="nofollow">Maidreamin API</a> provided Maidreamin menu from unofficial creator with easily to set up 
                                 but came with very fast and rich-content response.
                             </h3>
                         </summary>
