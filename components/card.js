@@ -7,7 +7,8 @@ const Card = (props) => {
 
     useEffect(() => {
         const element = document.querySelector(".blog-nav-card");
-        if ('IntersectionObserver' in window){
+        if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window &&
+            'intersectionRatio' in window.IntersectionObserverEntry.prototype){
             const io = new IntersectionObserver(entries => {
                 if(entries[0].isIntersecting && !intersected){
                     setIntersected(true);
@@ -25,7 +26,7 @@ const Card = (props) => {
     }, []);
 
     return(
-        <a className="blog-nav-card" href={props.href} rel="nofollow">
+        <a className="blog-nav-card" href={props.href} rel="referrer nofollow">
             <picture>
                 { intersected ?
                     <Fragment>

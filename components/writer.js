@@ -7,7 +7,8 @@ const Writer = (props) => {
     
     useEffect(() => {
         const element = document.getElementById("blog-footer");
-        if ('IntersectionObserver' in window){
+        if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 
+            'intersectionRatio' in window.IntersectionObserverEntry.prototype){
             const io = new IntersectionObserver(entries => {
                 if(entries[0].isIntersecting && !intersected){
                     setIntersected(true);

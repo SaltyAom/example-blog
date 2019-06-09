@@ -9,9 +9,11 @@
     transition: transform .2s ease-out, box-shadow .2s ease-out;
     text-decoration:none;
 }
-.blog-nav-card:hover, .blog-nav-card:focus {
+.blog-nav-card:hover, .blog-nav-card:focus,
+.blog-nav-card:hover .blog-nav-card:focus {
     box-shadow:0 7px 25px rgba(0,0,0,.325);
     transform: translateY(-10px);
+    -webkit-tap-highlight-color: transparent;
 }
 .blog-nav-img {
     width:100%;
