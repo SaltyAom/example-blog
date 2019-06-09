@@ -2,7 +2,12 @@ import React, { Fragment } from 'react'
 import { withAmp } from 'next/amp'
 import Head from 'next/head'
 
+
+import Writer from '../components/writer'
 import Card from '../components/card'
+
+import '../static/css/blog.css'
+import '../static/css/responsive.css'
 
 let schema = {
     "@context": {
@@ -25,136 +30,6 @@ let schema = {
 const Blog = () => {
     return(
         <Fragment>
-            <style amp-custom jsx>
-            {`
-                body {
-                    margin:0;
-                    width:100%;
-                    background-color: #f9fafc;
-                }
-                * {
-                    font-family: Helvetica, sans-serif;
-                    box-sizing: border-box;
-                }
-                #blog-body {
-                    width:726px;
-                    margin: 30px auto 20px auto;
-                }
-                #blog-head {
-                    display:block;
-                    margin:65px 0 25px 0;
-                }
-                #blog-head-title {
-                    margin:0;
-                    font-size: 66px;
-                }
-                #blog-time {
-                    font-size:18px;
-                    color:#6c6c6c;
-                    margin-top: 15px;
-                    display:block;
-                }
-                #blog-head-img {
-                    width:100%;
-                    border-radius: 3px;
-                    margin:25px 0;
-                    box-shadow: 0 7px 20px rgba(0,0,0,.425);
-                }
-                h2 { 
-                    font-size: 42px;
-                    color:#121212;
-                    margin: 45px 0 20px 0;
-                }
-                p { 
-                    font-size: 21px; 
-                    line-height: 1.875rem;
-                    color:#555;
-                    margin:25px 0;
-                }
-                li {
-                    font-size: 21px;
-                    color: #6c6c6c;
-                    line-height: 2rem;
-                }
-                #blog-summary {
-                    margin: 0 0 25px 0;
-                }
-                #blog-summary-text {
-                    padding: 10px 15px;
-                    font-size: 21px;
-                    margin:0;
-                    color:#555;
-                    font-weight: normal;
-                    line-height: 2.25rem;
-                }
-                #blog-footer {
-                    display:block;
-                    border-top:1px solid #ccc;
-                }
-                #blog-writer {
-                    display:flex;
-                    flex-direction:row;
-                    justify-content:flex-start;
-                    align-items:center;
-                    padding:10px 15px;
-                    margin: 10px;
-                }
-                #blog-writer-img {
-                    width: 64px;
-                    height:64px;
-                    object-fit:fill;
-                    border-radius:32px;
-                    border:1px solid #eee;
-                }
-                #blog-writer-name {
-                    display:block;
-                    text-align:right;
-                    font-weight:normal;
-                    margin:0;
-                    font-size:21px;
-                    color:#333;
-                    margin-left: 25px;
-                }
-                #blog-nav {
-                    display:flex;
-                    flex-direction: row;
-                    justify-content: space-around;
-                    align-items: flex-start;
-                    width: 960px;
-                    margin: 20px auto 40px auto;
-                }
-                ::selection, ::-webkit-selection {
-                    background-color: rgba(0,123,255,.25);
-                }
-                a { color: #005cff; text-decoration:none; }
-                @media screen and (min-width:768px) and (max-width: 1024px){
-                    #blog-nav {
-                        width: 740px;
-                    }
-                }
-                @media screen and (max-width: 767.9px){
-                    #blog-head-title { font-size: 42px; }
-                    #blog-body {
-                        width:100%;
-                        padding:0 2.5%;
-                    }
-                    section {
-                        padding:0 2.5%;
-                    }
-                    #blog-nav {
-                        width:100%;
-                        padding:0 5%;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: flex-start;
-                    }
-                    .blog-nav-card {
-                        width:100%;
-                        margin:15px 0;
-                    }
-                }
-            `}
-            </style>
             <Head>
                 <title>Introducting Maidreamin API - Example Blog</title>
                 <meta name="title" content="Introducting Maidreamin API - Example Blog" />
@@ -222,7 +97,6 @@ const Blog = () => {
                             srcSet='../static/img/anime-girlsX1280.jpg 1280w, ../static/img/anime-girlsX726.jpg 726w'
                             size="(min-width:726.1px) 1280px, (max-width:726px) 726px"
                             alt='Anime girls'
-                            lazy="true"
                         />
                     </picture>
                     <section>
@@ -266,31 +140,10 @@ const Blog = () => {
                             </h3>
                         </summary>
                     </section>
-                    <footer id="blog-footer">
-                        <section>
-                            <div id="blog-writer">
-                                <picture>
-                                    <source
-                                        type="image/webp"
-                                        srcSet='../static/img/aomkirby123.webp'
-                                    />
-                                    <source
-                                        type="image/jpg"
-                                        srcSet='../static/img/aomkirby123.jpg'
-                                    />
-                                    <img
-                                        id='blog-writer-img'
-                                        src='../static/img/aomkirby123.jpg'
-                                        alt="aomkirby123's avatar"
-                                        lazy="true"
-                                    />
-                                </picture>
-                                <h4 id="blog-writer-name">
-                                    aomkirby123
-                                </h4>
-                            </div>
-                        </section>
-                    </footer>
+                    <Writer
+                        imgDir="aomkirby123"
+                        name="aomkirby123"
+                    />
                 </article>
             </main>
             <nav id="blog-nav">
@@ -323,4 +176,4 @@ const Blog = () => {
     )
 }
 
-export default withAmp(Blog);
+export default withAmp(Blog, { hybrid: true });

@@ -1,0 +1,38 @@
+@media screen and (min-width:768px) and (max-width: 1024px){
+    #blog-nav {
+        width: 740px;
+    }
+}
+
+@media screen and (min-width:568px) and (max-width: 767.9px){
+    #blog-body {
+        width:100%;
+        padding:0 6.25%;
+    }
+    #blog-nav {
+        width: 100%;
+        padding:0 2.5%;
+    }
+}
+
+@media screen and (max-width: 567.9px){
+    #blog-head-title { font-size: 42px; }
+    #blog-body {
+        width:100%;
+        padding:0 2.5%;
+    }
+    section {
+        padding:0 2.5%;
+    }
+    #blog-nav {
+        width:100%;
+        padding:0 5%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .blog-nav-card {
+        width:100%;
+        margin:15px 0;
+    }
+}

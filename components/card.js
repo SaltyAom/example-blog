@@ -1,80 +1,70 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 
-const Card = (props) => (
-    <Fragment>
-        <style jsx amp-custom>{`
-            .blog-nav-card {
-                display:flex;
-                flex-direction:column;
-                flex:1;
-                margin:20px 8px;
-                background-color:#fff;
-                border-radius: 7px;
-                box-shadow:0 3px 15px rgba(0,0,0,.2);
-                transition: transform .2s ease-out, box-shadow .2s ease-out;
-                text-decoration:none;
+import "../static/css/card.css"
+
+const Card = (props) => {
+    const [intersected, setIntersected] = useState(false);
+
+    useEffect(() => {
+        const element = document.querySelector(".blog-nav-card");
+        if ('IntersectionObserver' in window){
+            const io = new IntersectionObserver(entries => {
+                if(entries[0].isIntersecting && !intersected){
+                    setIntersected(true);
+                    io.unobserve(entries[0].target);
+                }
+            });
+
+            io.observe(element);
+            return () => {
+                io.unobserve(element);
             }
-            .blog-nav-card:hover, .blog-nav-card:focus {
-                box-shadow:0 7px 25px rgba(0,0,0,.325);
-                transform: translateY(-10px);
-            }
-            .blog-nav-img {
-                width:100%;
-                border-top-left-radius:  7px;
-                border-top-right-radius: 7px;
-                object-fit:fill;
-            }
-            .blog-nav-card-body {
-                padding: 3px 12px 20px 12px;
-                display:block;
-                margin:0;
-            }
-            .blog-nav-card-body-title {
-                width:100%;
-                margin:0;
-                font-size: 21px;
-                color: #6f6f6f;
-            }
-            .blog-nav-card-body-read-time {
-                display:block;
-                margin:8px 0 10px 0;
-                color: #6f6f6f;
-                font-size:16px;
-            }
-            .blog-nav-card-body-author {
-                display:block;
-                margin:10px 0 0 10px;
-                color: #6f6f6f;
-                font-size:16px;
-            }
-            .blog-nav-card-body-author::before {
-                content: "— "
-            }
-        `}</style>
+        } else {
+            setIntersected(true);
+        }
+    }, []);
+
+    return(
         <a className="blog-nav-card" href={props.href} rel="nofollow">
             <picture>
-                <source
-                    type="image/webp"
-                    srcSet={`../static/img/${props.imgDir}.webp`}
-                />
-                <source
-                    type="image/jpg"
-                    srcSet={`../static/img/${props.imgDir}.jpg`}
-                />
-                <img
-                    className="blog-nav-img"
-                    src={`../static/img/${props.imgDir}.jpg`}
-                    alt={props.alt}
-                    lazy="true"
-                />
+                { intersected ?
+                    <Fragment>
+                        <source
+                            type="image/webp"
+                            srcSet={`../static/img/${props.imgDir}.webp`}
+                        />
+                        <source
+                            type="image/jpg"
+                            srcSet={`../static/img/${props.imgDir}.jpg`}
+                        />
+                        <img
+                            className="blog-nav-img"
+                            src={`../static/img/${props.imgDir}.jpg`}
+                            alt={props.alt}
+                        />
+                    </Fragment>
+                :
+                    <Fragment>
+                        <source
+                            type="image/webp"
+                        />
+                        <source
+                            type="image/jpg"
+                        />
+                        <img
+                            className="blog-nav-img blog-nav-img-load"
+                            alt={props.alt}
+                        />
+                    </Fragment>
+                }
             </picture>
-            <div className="blog-nav-card-body">
+            <article className="blog-nav-card-body">
                 <p className="blog-nav-card-body-read-time">{props.readTime} minutes</p>
                 <h5 className="blog-nav-card-body-title">{props.title}</h5>
                 <p className="blog-nav-card-body-author">{props.author}</p>
-            </div>
+            </article>
         </a>
-    </Fragment>
-)
+    )
+}
 
 export default Card

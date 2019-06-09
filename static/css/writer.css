@@ -1,0 +1,28 @@
+#blog-footer {
+    display:block;
+    border-top:1px solid #ccc;
+}
+#blog-writer {
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:center;
+    padding:10px 15px;
+    margin: 10px;
+}
+#blog-writer-img {
+    width: 64px;
+    height:64px;
+    object-fit:fill;
+    border-radius:32px;
+    border:1px solid #eee;
+}
+#blog-writer-name {
+    display:block;
+    text-align:right;
+    font-weight:normal;
+    margin:0;
+    font-size:21px;
+    color:#333;
+    margin-left: 25px;
+}
