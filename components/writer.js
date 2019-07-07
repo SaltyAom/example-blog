@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Fragment } from "react"
+import { h, Fragment } from 'preact'
+import { useState, useEffect } from 'preact/hooks'
 
 import "../static/css/writer.css"
 
@@ -18,7 +19,9 @@ const Writer = (props) => {
 
             io.observe(element);
         } else {
-            setIntersected(true);
+            window.onload = () => {
+                setIntersected(true);
+            }
         }
     }, []);
 

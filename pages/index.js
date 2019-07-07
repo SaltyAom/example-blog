@@ -1,7 +1,5 @@
-import React, { Fragment } from 'react'
-import { withAmp } from 'next/amp'
+import { h, Fragment } from 'preact'
 import Head from 'next/head'
-
 
 import Writer from '../components/writer'
 import Card from '../components/card'
@@ -19,29 +17,33 @@ let schema = {
         "@type": "Person",
         "name": "aomkirby123"
     },
-    title: "Introducing, Maidreamin API!",
+    "title": "Introducing, Maidreamin API!",
     "image": "https://ex-maid-blog.now.sh/static/img/anime-girls.jpg",
     "datePublished": "2019-06-07",
-    "dateModified": "2019-06-08",
+    "dateModified": "2019-07-07",
     "@type": "BlogPosting",
-    "url":"https://ex-maid-blog.now.sh"
+    "url":"https://ex-maid-blog.now.sh",
+    "Maidreamin API": "Maidreamin API is a RESTful API for getting unofficial data of Maidreamin MBK Bangkok including every menu on a list.",
+    "Is maidreamin API official": "Maidreamin API is NOT an official API from Maidreamin MBK. Created by developer who like to go to Maidreamin.",
+    "How to use Maidreamin API": "To use Maidreamin API, you need to create a GET request to 'https://maidreamin.now.sh/menu'.",
+    "Does Maidreamin API support Japanese": "Yes, Maidreamin support Thai, English and Japanese language based on Maidreamin MBK menu book."
 }
 
 const Blog = () => {
     return(
         <Fragment>
             <Head>
-                <title>introducing Maidreamin API - Example Blog</title>
-                <meta name="title" content="introducing Maidreamin API - Example Blog" />
-                <meta name="description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok" />
+                <title>Introducing Maidreamin API - Example Blog</title>
+                <meta name="title" content="Introducing Maidreamin API - Example Blog" />
+                <meta name="description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok, , some might ask what is maidreamin API and how can it be help, right?" />
                 <meta name="author" content="aomkirby123" />
-                <meta name="keywords" content="maidreamin api, restful api, mbk bangkok, api provided" />
+                <meta name="keywords" content="maidreamin api, maidreamin bangkok, what is maidreamin api" />
                 <meta name="revisit-after" content="7 days" />
                 <link rel="icon" href="../static/img/hakutaku.png" />
                 <meta httpEquiv="content-language" content="en" />
 
-                <meta property="og:title" content="introducing Maidreamin API - Example Blog" />
-                <meta property="og:description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok" />
+                <meta property="og:title" content="Introducing Maidreamin API - Example Blog" />
+                <meta property="og:description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok, some might ask what is maidreamin API and how can it be help, right?" />
                 <meta property="og:site_name" content="Introducing Maidreamin API" />
 
                 <meta property="og:locale" content="en_US" />
@@ -57,7 +59,7 @@ const Blog = () => {
                 <meta property="article:modified_time" content="2019-06-08" />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="introducing Maidreamin API - Example Blog" />
+                <meta name="twitter:title" content="Introducing Maidreamin API - Example Blog" />
                 <meta name="twitter:description" content="Introducing Maidreamin API, a RESTful API for getting data from Maidreamin MBK Bangkok" />
                 <meta name="twitter:site" content="@saltyAom" />
                 <meta name="twitter:creator" content="@saltyAom" />
@@ -100,7 +102,7 @@ const Blog = () => {
                         />
                     </picture>
                     <section>
-                            <h2>Maidreamin API</h2>
+                            <h2>What is Maidreamin API</h2>
                             <p>
                                 <a href="https://maidreamin.now.sh/menu" target="_blank" rel="nofollow">Maidreamin API</a> is a RESTful API for getting 
                                 unofficial data of Maidreamin MBK Bangkok including every menu on a list.
@@ -174,4 +176,4 @@ const Blog = () => {
     )
 }
 
-export default withAmp(Blog, { hybrid: true });
+export default Blog

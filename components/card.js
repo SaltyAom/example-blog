@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import { h, Fragment } from 'preact'
+import { useState, useEffect } from 'preact/hooks'
 
 import "../static/css/card.css"
 
@@ -21,7 +22,9 @@ const Card = (props) => {
                 io.unobserve(element);
             }
         } else {
-            setIntersected(true);
+            window.onload = () => {
+                setIntersected(true);
+            }
         }
     }, []);
 

@@ -2,24 +2,31 @@
     "version": 2,
     "name": "ex-maid-blog",
     "builds": [
-        {
+        { 
+            "src": "server.js", 
+            "use": "@now/node" 
+        }, 
+        { 
             "src": "next.config.js", 
-            "use": "@now/next",
-            "config": { "maxLambdaSize": "50mb" }
+            "use": "@now/next" 
+        },
+        {
+            "src": "static/**/*", 
+            "use": "@now/static" 
         }
     ],
     "routes": [
         {
-            "headers": {
+            "src":"/.*",
+            "headers": { 
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET",
                 "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
                 "x-now-cache": "HIT",
-                "cache-control": "s-maxage=604800, max-age=604800",
+                "cache-control": "immutable,max-age=31536000",
                 "Accept-Encoding": "br",
                 "Service-Worker-Allowed": "/"
-            },
-            "src": "/.*"
+            } 
         },
         { 
             "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", 
@@ -42,6 +49,5 @@
             }
         }
     ],
-    "regions": ["sin1", "sin"],
-    "alias": "ex-maid-blog.now.sh"
+    "regions": ["all"]
 }
